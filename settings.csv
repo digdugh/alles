@@ -1,0 +1,13 @@
+companions_phot,B
+inst_phot,KEPLER
+
+host_ld_law_KEPLER,quad
+B_ld_law_KEPLER,quad
+
+baseline_flux_KEPLER,hybrid_poly_2
+shift_epoch,True
+
+ns_modus,dynamic
+ns_nlive,800
+multiprocess,True
+multiprocess_cores,all

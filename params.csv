@@ -1,0 +1,28 @@
+name,value,fit,bounds,label,unit
+# --- Binary orbit ---
+B_period,27.7958103,1,normal 27.7958103 0.0002,P_bin,d
+B_epoch,0.0,1,uniform -1.0e6 1.0e6,T0_bin,BJD-2454833
+
+# Sample in sqrt(e)cosw, sqrt(e)sinw  (broad priors)
+B_f_c,0.72,1,uniform -1.0 1.0,sqrt(e)cosω,-
+B_f_s,0.00,1,uniform -1.0 1.0,sqrt(e)sinω,-
+
+# cos i prior (i ≈ 89.858 deg → cos i ≈ 0.0025)
+B_cosi,0.0025,1,uniform 0.0 0.02,cos i,-
+
+# Fractional radii and radius ratio
+B_rsuma,0.0458,1,uniform 0.02 0.08,(R_A+R_B)/a,-
+B_rr,0.9405,1,uniform 0.7 1.1,R_B/R_A,-
+
+# Surface-brightness ratio in KEPLER band
+B_sbratio_KEPLER,0.97,1,uniform 0.7 1.2,J_B/J_A,-
+
+# --- Limb darkening (Kipping q1,q2 for quadratic law) ---
+host_ldc_q1_KEPLER,0.49,1,uniform 0.0 1.0,q1,-
+host_ldc_q2_KEPLER,0.29,1,uniform 0.0 1.0,q2,-
+B_ldc_q1_KEPLER,0.49,1,uniform 0.0 1.0,q1,-
+B_ldc_q2_KEPLER,0.29,1,uniform 0.0 1.0,q2,-
+
+# --- Photometry nuisance ---
+dil_KEPLER,0.05,1,uniform 0.0 0.15,dilution,-
+ln_err_flux_KEPLER,0.0,1,uniform -5 5,ln σ_scale,-
